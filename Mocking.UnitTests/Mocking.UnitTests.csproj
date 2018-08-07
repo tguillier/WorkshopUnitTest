@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mocking.Core\Mocking.Infrastructure.csproj" />
-    <ProjectReference Include="..\Mocking.Infrastructure\Mocking.Domain.csproj" />
+    <ProjectReference Include="..\Mocking.Domain\Mocking.Domain.csproj" />
+    <ProjectReference Include="..\Mocking.Infrastructure\Mocking.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
