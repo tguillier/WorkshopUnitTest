@@ -1,4 +1,5 @@
 using AlienInvasion.Core;
+using Moq;
 using System;
 using Xunit;
 
@@ -53,6 +54,44 @@ namespace AlienInvasion.UnitTests
 
             // Assert
             Assert.Equal(shouldReload, !gun.HasAmmo());
+        }
+
+        [Fact]
+        public void HaveAmmoAfterReload()
+        {
+            // Arrange
+            var alien = new Alien();
+            var gun = new Raygun();
+
+            // Act
+            while (gun.HasAmmo())
+            {
+                gun.Shoot(alien);
+            }
+
+            gun.Reload();
+
+            // Assert
+            Assert.True(gun.HasAmmo());
+        }
+
+        [Fact]
+        public void ReloadAfterShotWithNoAmmo()
+        {
+            // Arrange
+            var alien = new Alien();
+            var gun = new Raygun();
+
+            // Act
+            while (gun.HasAmmo())
+            {
+                gun.Shoot(alien);
+            }
+
+            gun.Shoot(alien);
+
+            // Assert
+            Assert.True(gun.HasAmmo());
         }
     }
 }

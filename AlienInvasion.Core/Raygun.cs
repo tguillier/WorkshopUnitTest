@@ -27,7 +27,7 @@ namespace AlienInvasion.Core
             ammo--;
         }
 
-        private void Reload()
+        public void Reload()
         {
             ammo = 3;
         }
