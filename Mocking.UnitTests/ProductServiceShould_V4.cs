@@ -14,12 +14,12 @@ namespace Mocking.UnitTests
         [Theory]
         [AutoMoqData]
         public void ListAllProductsUnderPrice(
+            decimal price,
             IEnumerable<Product> productList,
             [Frozen]Mock<IRepository<Product>> productRepositoryMock,
             ProductService productService)
         {
             // Arrange
-            const decimal price = 0.50M;            
             productRepositoryMock.Setup(repo => repo.ListAll()).Returns(productList);
 
             // Act

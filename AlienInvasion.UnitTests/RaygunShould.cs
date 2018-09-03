@@ -1,5 +1,4 @@
 using AlienInvasion.Core;
-using Moq;
 using System;
 using Xunit;
 
@@ -48,7 +47,6 @@ namespace AlienInvasion.UnitTests
             // Act
             for (int i = 0; i < shotsCount; i++)
             {
-                alien.Dodge();
                 gun.Shoot(alien);
             }
 

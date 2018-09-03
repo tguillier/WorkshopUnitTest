@@ -5,7 +5,6 @@ using Mocking.Domain.Interfaces;
 using Mocking.Domain.Services;
 using Moq;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace Mocking.UnitTests
