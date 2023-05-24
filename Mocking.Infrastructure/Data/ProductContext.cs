@@ -12,16 +12,14 @@ namespace Mocking.Infrastructure.Data
 
         public DbSet<Product> Products { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
-            builder.Entity<Product>(ConfigureProduct);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Product>(ConfigureProduct);
         }
 
         private void ConfigureProduct(EntityTypeBuilder<Product> builder)
         {
-            builder.ToTable("Product");
-
             builder.Property(p => p.Id)
                 .IsRequired()
                 .ValueGeneratedOnAdd();
